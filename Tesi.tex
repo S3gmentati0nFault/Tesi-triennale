@@ -1,0 +1,118 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[paper=a4paper,margin=1in]{geometry}
+\usepackage{csquotes}
+\usepackage{biblatex}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{graphicx}
+\usepackage{colortbl, xcolor}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+
+%%% TRIM MODULUS SPACING %%%
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+%%% COLORS %%%
+%%% BLUE %%%
+\definecolor{DarkBlue}{rgb}{0.43, 0.83, 0.87}
+\definecolor{Blue}{rgb}{0.63, 0.88, 0.9}
+\definecolor{LightBlue}{rgb}{0.76,0.92,0.94}
+\definecolor{LighterBlue}{rgb}{0.85, 0.96, 0.99}
+%%% PURPLE %%%
+\definecolor{DarkViolet}{rgb}{0.60, 0.50, 0.80}
+\definecolor{Violet}{rgb}{0.75, 0.68, 0.93}
+\definecolor{LightViolet}{rgb}{0.85, 0.70, 0.95}
+\definecolor{LighterViolet}{rgb}{0.9, 0.79, 0.98}
+%%% ORANGE %%%
+\definecolor{DarkOrange}{rgb}{0.92, 0.71, 0.02}
+\definecolor{Orange}{rgb}{0.97, 0.79, 0.21}
+\definecolor{LightOrange}{rgb}{0.92, 0.8, 0.44}
+\definecolor{LighterOrange}{rgb}{0.96, 0.89, 0.61}
+%%% GREEN %%%
+\definecolor{Green}{rgb}{0.39, 0.84, 0.39}
+\definecolor{LightGreen}{rgb}{0.55, 0.88, 0.55}
+\definecolor{LighterGreen}{rgb}{0.7, 0.92, 0.7}
+%%% RED %%%
+\definecolor{Red}{rgb}{1, 0.33, 0.3}
+\definecolor{LightRed}{rgb}{1, 0.61, 0.6}
+
+
+
+
+\addbibresource{Bibliography.bib}
+\bibliography{Bibliography}
+
+\begin{document}
+    
+    \begin{titlepage}
+        
+        \noindent
+        \begin{minipage}[t]{0.19\textwidth}
+            \vspace{-4mm}{\includegraphics[scale=1.15]{logo_unimib.pdf}}
+        \end{minipage}
+        \begin{minipage}[t]{0.81\textwidth}
+        {
+                \setstretch{1.42}
+                {\textsc{Università degli Studi di Milano - Bicocca}} \\
+                \textbf{Scuola di Scienze} \\
+                \textbf{Dipartimento di Informatica, Sistemistica e Comunicazione} \\
+                \textbf{Corso di laurea in Informatica} \\
+                \par
+        }
+        \end{minipage}
+        
+	\vspace{40mm}
+        
+	\begin{center}
+            {\LARGE{
+                    \setstretch{1.2}
+                    \textbf{Progetto e sviluppo di un'applicazione web a microservizi per la gestione sicura dell'anagrafica aziendale}
+                    \par
+            }}
+        \end{center}
+        
+        \vspace{50mm}
+
+        \noindent
+        {\large \textbf{Relatore:} Prof. Claudio Zandron } \\
+        
+        \vspace{15mm}
+
+        \begin{flushright}
+            {\large \textbf{Relazione della prova finale di:}} \\
+            \large{Alessandro Biagiotti} \\
+            \large{Matricola 869014} 
+        \end{flushright}
+        
+        \vspace{35mm}
+        \begin{center}
+            {\large{\bf Anno Accademico 2021-2022}}
+        \end{center}
+
+        \restoregeometry
+        
+    \end{titlepage}
+    
+    \clearpage
+    \clearpage
+    
+    \tableofcontents
+    
+    \clearpage
+    
+    \input chapters
+    
+    \cleardoublepage
+
+    \phantomsection
+
+    \addcontentsline{toc}{chapter}{Bibliography}
+    
+    \printbibliography
+\end{document}

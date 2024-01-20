@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusioni}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bilancio dell'esperienza}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Il bilancio dell'esperienza è estremamente positivo, nonostante non vi sia stata la possibilità di lavorare in sede, ho potuto collaborare con il mio collega in modo proficuo, sia da remoto, che faccia a faccia, sfruttando gli spazi universitari.
+\\
+Ho avuto la possibilità di mettere mano a tecnologie che sono considerate standard assoluti nel loro settore. Basti pensare che, secondo un'intervista di Statista\footnote{
+\url{https://www.statista.com/}
+} che ha coinvolto quasi 68000 persone, il 40\% circa degli intervistati impiega attualmente ReactJS come tecnologia per la gestione di applicazioni web.\cite{WDFUsage} Rimanendo sulle stesse note, dal momento della creazione di DockerHub, nel 2014, sul sito sono state caricate (stando ai dati del 2020) ben 7 milioni di immagini liberamente accessibili e sono state eseguite 242 miliardi di pull-request\footnote{
+Si parla di pull-request quando un utente esegue il download di un'immagine presente su DockerHub sulla propria macchina personale.
+}. Solo nel mese di giugno ne sono state eseguite 11 miliardi, contro le 5.5 di giugno 2019.\cite{DockerHubUsage}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Obiettivi raggiunti}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Al termine dello stage sono riuscito a raggiungere la maggior parte degli obiettivi che mi ero inizialmente prefissato.
+\\
+Ho infatti ideato e sviluppato un'applicazione che consente di:
+\begin{itemize}
+    \item Creare, cancellare, modificare e visualizzare un utente e i suoi dati.
+    \item Generare automaticamente un curriculum in pdf a partire da un boiler plate e dai dati dell'utente.
+    \item Ho fatto in modo che l'applicazione si potesse avviare con un unico comando da terminale.
+\end{itemize}
+Nonostante tutto ci sono alcune questioni che avrei voluto concludere meglio.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Obiettivi mancati}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Siccome il mio percorso di tirocinio è stato sostanzialmente da autodidatta ci sono alcune cose che adesso, essendomi confrontato con altre persone più esperte, saltano all'occhio e richiederebbero una messa a punto sostanziale.
+\begin{itemize}
+    \item Includere gli script di creazione di utenti di default nei volumi di Docker anzichè come post constructor interni al backend. Questa soluzione è molto più elegante e penso che sia anche più corretta.
+    \item Ottimizzare la struttura del container frontend, impiegando la build in due stage in modo da non includere i file di node nel container. Impiegando questa tecnica si sarebbe tagliata di molto la dimensione finale e avrebbe ridotto considerevolmente i tempi di caricamento.
+    \item Ripulire la struttura del frontend, eliminando tutte le componenti di dubbia utilità.
+\end{itemize}
+Nonostante tutto, secondo il mio metro di giudizio, gli obiettivi essenziali del progetto sono stati raggiunti. Ho potuto imparare delle tecnologie nuove e di importanza vitale per chiunque intenda calcare le scene dello sviluppo full-stack o delle discipline attinenti al Cloud. Posso dunque unicamente dire di essere particolarmente grato per l'opportunità e soddisfatto del mio lavoro.
+\\
+Come conclusione reale della tesi intendo mettere un semino nella terra e ipotizzare alcuni sviluppi futuri per la mia web application, grazie all'interconnessione che c'è tra molte delle esperienze di tirocinio in azienda alcuni di questi semi hanno già germogliato.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sviluppi futuri}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In quest'ultima sezione della tesi propongo alcuni utili aggiornamenti che l'applicazione potrebbe subire al fine di adeguarla all' ambito enterprise.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gestione delle hard-skill più capillare}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Questa è una piccola modifica che avrei voluto apportare, nel caso in cui ve ne fosse stato il tempo, l'idea è quella di sfruttare la sezione di visualizzazione di tutte le skill, per poter eliminare eventuali entry sovrabbondanti dal database. Sarebbe molto utile, tra l'altro, sapere quali utenti dicono di possedere una certa skill e con quale livello si sono valutati.
+\\
+Inoltre il mio capo avrebbe voluto vedere un menu a tendina apparire durante il processo di inserimento di una nuova Hard Skill (una tecnica utilizzata da siti come almalaurea), per guidare la selezione dell'utente. Questa soluzione avrebbe consentito un'inserimento più rapido, una conferma per l'utente, e avrebbe potuto evitare la presenza di doppioni all'interno del database.\footnote{
+Doppioni che possono essere dovuti al fatto che un utente inserisce una skill sotto il nome di "java" e una sotto il nome di "Java". Per risolvere questo problema, si potrebbero impiegare dei semplici controlli backend, come la comparazione tra stringhe, sapendo che tutte le stringhe nel database sono salvate necessariamente in minuscolo.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gestione di ruoli realistici}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Sebbene il titolo suoni eccessivamente negativo, nella mia applicazione mi sono trovato a gestire una gerarchia di ruoli che non era altro che una semplificazione di quello che è effettivamente l'organigramma aziendale. In realtà sarebbe stato più corretto creare diversi ruoli specializzati sui quali andavano spalmate le varie operazioni.
+\\
+Per esempio un admin che lavora nel campo di HR avrebbe avuto pieno controllo su tutti gli utenti, ma penso che probabilmente avrebbe avuto meno privilegi nell'ambito delle hard skill, rispetto a un capo-ingegnerie o capo-programmatore.
+\\
+Penso che una gestione più realistica dell'organigramma aziendale sarebbe il primissimo passo per avvicinare l'applicazione all'archetipo di strumento enterprise per la gestione interna dei dipendenti.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sistemi di sicurezza più adeguati}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Siccome l'applicazione è costruita per gestire i dati personali degli utenti è di estrema importanza fare si che tali dati siano sicuri all'interno del sistema.
+\\
+La security attualmente implementata all'interno dell'applicazione, potrebbe andare, però penso che la creazione di soluzioni custom sia sempre migliore dell'utilizzo di soluzioni di default implementate all'interno di una libreria.
+\\
+Per esempio potrebbe essere estremamente interessante andare ad implementare il protocollo di cifratura di Diffie-Hellman per il processo di autenticazione dell'utente. Oltre all'interesse che provo, lato tecnico, questo sistema è stato provato estremamente sicuro, in quanto, secondo stime odierne\cite{ArsTechnicaDiffieHellman}, il protocollo nella sua versione a 1024 bit potrebbe essere violato nell'arco di circa un anno da un sistema del valore ipotetico di 100 milioni di dollari. Cifra spropositata cui solo le più grandi aziende possono ambire.
+\\
+Per mantenere l'interno dell'applicazione sicuro, invece, si potrebbe implementare un sistema di analisi automatica dei log, che riesce a riconoscere dei pattern che potrebbero corrispondere a classiche violazioni di sicurezza come XSS e SQL injection.
+\\
+Questa soluzione è stata implementata sul mio codice da un collega che stava facendo il proprio tirocinio sulla sicurezza e ha impiegato la tecnologia di Splunk\footnote{
+Splunk è una soluzione per abilitare strategie data-driven sfruttando le potenzialità dei dati delle imprese e generando insight abilitanti e aggiornati in tempo reale.\cite{SplunkDef}
+} per eseguire analisi sintattiche dei log che la nostra applicazione, e il server Tomcat, producevano.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Obiettivo Cloud}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Per concludere, il Cloud.
+Un'innovazione che ha visto la sua importanza nella vita di tutti i giorni crescere a dismisura. Basti pensare che, tuttora, molti lavoratori si collegano alle proprie workstation tramite thin-client, che sono nelle loro case, mentre le risorse che sono loro dedicate vengono gestite tramite il Cloud.
+\\
+Anche sotto questo aspetto il futuro è già arrivato, infatti la nostra applicazione è stata inserita in un contesto IaC sui cluster Kubernetes aziendali tramite Terraform\footnote{
+Terraform è uno strumento IaC (Infrastructure as Code) open source creato da HashiCorp.
+\\
+Uno strumento di codifica dichiarativo, Terraform impiega HCL (HashiCorp Configuration Language) per descrivere l'infrastruttura sul Cloud o in ambienti on-premise nello "stato finale" per l'esecuzione di un'applicazione. Genera poi un piano per raggiungere tale stato finale e lo attua per eseguire il provisioning dell'infrastruttura.\cite{TerraformDef}
+}.

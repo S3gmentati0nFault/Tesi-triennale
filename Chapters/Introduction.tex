@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduzione}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In questa relazione analizzerò quali siano state le sfide che ho dovuto affrontare nel corso del mio tirocinio curricolare presso l'azienda Certimeter s.r.l., le tecniche che ho impiegato per superarle, e le tecnologie che ho dovuto mettere in campo per arrivare a una soluzione che fosse conforme alle richieste dell'azienda.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Progetto e obiettivi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Il progetto che ho dovuto affrontare era declinato come segue:
+\begin{displayquote}
+\emph{Si sviluppi un'applicazione web a microservizi che consenta la gestione sicura dell'anagrafica del personale aziendale}
+\end{displayquote}
+La definizione era volutamente generica, per consentire al tirocinante di gestire l'intero processo di sviluppo: dalle fasi iniziali di studio, a quelle finali di deployment. Ho seguito questo percorso insieme a un altro studente, laureando in Sicurezza di Sistemi e Reti presso l'Università Statale di Milano.
+\\
+Gli obiettivi del progetto erano i seguenti:
+\begin{itemize}
+    \item Imparare a lavorare in team.
+    \item Responsabilizzarsi nei confronti del proprio datore di lavoro.
+    \item Imparare alcune delle tecnologie web più utilizzate in questo momento.
+    \item Imparare a gestire la sicurezza di un'applicazione web (questo aspetto era più di dominio del mio collega ma, avendo lavorato in coppia, abbiamo finito per imparare l'uno dall'altro).
+    \item Imparare a sviluppare a microservizi con la possibilità di muoversi verso un ambito di dev-ops e continuous integration.
+    \item Essere in grado di dare un minimo di supporto ad altri colleghi a lavoro finito.
+\end{itemize}
+Approcciando il progetto ho individuato una serie di punti che andavano chiariti per poter procedere nella direzione corretta.
+\begin{enumerate}
+    \item Scelta e apprendimento dei tool di sviluppo e dei linguaggi
+    \item Delimitazione del perimetro di lavoro: La richiesta era tanto estesa da consentire di ipotizzare l'inserimento di funzionalità accessorie quali un servizio di mail interno e un sistema di gestione e convalida dei Green-Pass. Entrambe le funzioni sono state successivamente accantonate per mancanza di tempo.
+    \item Gestione delle risorse e divisione dei compiti
+\end{enumerate}
+Una volta terminata la fase di studio ho stabilito che la richiesta sarebbe stata intesa come segue:
+\begin{displayquote}
+Si sviluppi un'applicazione web a microservizi in grado di gestire autenticazioni e autorizzazioni sulla base dei ruoli degli utenti e che offra la possibilità di eseguire le seguenti operazioni:
+\begin{itemize}
+    \item Creazione di un nuovo utente
+    \item Cancellazione di un utente
+    \item Modifica dei dati di un utente, divisi come segue:
+    \begin{itemize}
+        \item Soft-skills
+        \item Hard-skills
+        \item Esperienze lavorative pregresse
+        \item Informazioni personali
+    \end{itemize}
+    \item Visualizzazione dei dati di un utente
+    \item Generazione automatica di un curriculum pdf scaricabile
+\end{itemize}
+\end{displayquote}
+Per vedere come ciascuna feature è stata declinata più nel dettaglio si faccia riferimento ai capitoli 4 e 5 della tesi.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Struttura dell'azienda}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Certimeter s.r.l. è parte di Certimeter Group, network dedicato alla consulenza informatica, specializzato nella realizzazione di soluzioni, prodotti e servizi IT.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=200px]{./images/certimeter_logo.jpeg}
+    \caption{Il logo di Certimeter Group}
+    \label{fig:CertLogo}
+\end{figure}
+\\
+L'azienda, attraverso le sue conoscenze ed esperienze, si propone come partner strategico per i propri clienti garantendo elevati livelli di professionalità, qualità e affidabilità.
+L'azienda, con sedi nelle città di Torino e Milano, negli ultimi anni ha investito sul capitale umano, inserendo figure di livelli diversi e ottenendo, di conseguenza, un aumento del fatturato.
+\\
+Certimeter si propone come realtà all'avanguardia, in costante aggiornamento. Offre ai propri dipendenti l'accesso a corsi di aggiornamento e certificazioni in modo da garantire sempre la qualità di servizio migliore possibile.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Struttura della tesi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Il documento è articolato su cinque punti cardine:
+\begin{itemize}
+    \item Stato dell'arte: sezione in cui definisco alcune caratteristiche più prettamente tecniche dell'esperienza di sviluppo
+    \item Tecnologie: sezione in cui elenco le tecnologie che ho utilizzato per l'implementazione, argomento le mie scelte e ne spiego rapidamente alcune caratteristiche essenziali.
+    \item Design della soluzione: sezione in cui enumero quali sono state le scelte progettuali illustrandole con alcuni diagrammi prodotti durante la fase di studio e dettagliando quali sono state le feature che sono diventate parte dell'applicazione.
+    \item Implementazione: sezione in cui entro nel merito di alcuni aspetti implementativi.
+    \item Conclusioni: sezione in cui entro nel merito di quali potrebbero essere gli aggiornamenti futuri capaci di rendere l'applicazione migliore e, soprattutto, utilizzabile in campo enterprise.
+\end{itemize}

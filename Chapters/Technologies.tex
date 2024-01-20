@@ -1,0 +1,293 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Tecnologie}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In questa sezione andrò ad esplorare quali sono state le tecnologie più importanti per l'esperienza di sviluppo, l'obiettivo del capitolo è quello di introdurre la logica a monte della tecnologia, illustrarne brevemente la storia e successivamente indicare il motivo per cui è divenuta parte del progetto.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Linguaggi di programmazione}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Javascript}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px, height=100px]{./images/Javascript.png}
+    \caption{Il logo di Javascript}
+    \label{fig:JavaScript}
+\end{figure}
+Javascript è un linguaggio di programmazione multi paradigma orientato agli eventi, comunemente utilizzato nella programmazione Web lato client, per rendere una pagina reattiva, dunque rispondente ai cambiamenti provocati dalle interazioni dell'utente \cite{JavaScriptDef}. 
+\\
+Creato nel 1995 da Brendan Eich, della Netscape Communications, fu successivamente standardizzato dalla ECMA\footnote{
+La ECMA è un'associazione fondata nel 1961 e dedicata alla standardizzazione nel settore informatico e dei sistemi di comunicazione\cite{ECMAinternational}
+} nel 1997. Il linguaggio mette a disposizione una serie di funzionalità come:
+\begin{itemize}
+    \item Programmazione funzionale
+    \item Programmazione ad oggetti
+    \item Gestione degli eventi relativi alla pagina web
+\end{itemize}
+Il codice Javascript può essere inserito come script all'interno di una pagina HTML per renderla responsive, ovvero capace di modificarsi qualora si verifichino certe condizioni, oppure può essere utilizzato all'interno di framework come ReactJS e Angular per costruire la pagina da zero.
+\\
+L'adozione di Javascript per la programmazione frontend in ambito web è sostanzialmente obbligata, anche perchè, come si vedrà più avanti, ho utilizzato il framework di programmazione ReactJS.
+\\
+In particolare è stata impiegata l'ultima revision di Javascript (Javascript ES6\footnote{EcmaScript 6}) che ha messo sul tavolo alcuni aggiornamenti molto interessanti, quelli che mi sono trovato ad utilizzare maggiormente all'interno del progetto sono i seguenti:
+\begin{itemize}
+    \item Le parole chiave \textbf{let} e \textbf{const} per creare delle variabili e differenziarle sulla base delle loro caratteristiche.
+    \item Le funzioni anonime (\textbf{arrow functions}) che si sono rivelate utilissime per creare le componenti react.
+    \item Le \textbf{promise}, che ho utilizzato per qualsiasi chiamata al backend. Le Promise sono state concepite per rappresentare operazioni incomplete al momento corrente che saranno però complete in futuro; per questo motivo parliamo di un costrutto adottato nel caso di elaborazioni asincrone e differite. Alle promise sono associati tre diversi stati:
+    \begin{itemize}
+        \item Pending: la promise è in attesa.
+        \item Fulfilled: stato associato alla promise che rappresenta un'operazione completata.
+        \item Rejected: stato associato a un'operazione fallita.\cite{PromiseDefinition}
+    \end{itemize}
+\end{itemize}
+\'E possibile vedere tutti i cambiamenti apportati a JavaScript con ES6 su W3S\cite{ECMAScript6}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Java}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px, height=150px]{./images/Java.png}
+    \caption{Il logo di Java}
+    \label{fig:Java}
+\end{figure}
+Java è un linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica, che si appoggia sull'omonima piattaforma software di esecuzione, specificamente progettato per essere il più possibile indipendente dalla piattaforma hardware di esecuzione \cite{JavaDef}. 
+\\
+Il linguaggio è stato costruito per consentire la produzione di codice in grado di girare ovunque vi sia la macchina virtuale Java. Il paradigma alla base è lo stesso di C++, sono state però astratte le complessità legate alla gestione della memoria; compito lasciato a un \emph{garbage collector} automatico. Il fatto di lasciare a un meccanismo automatico la gestione della memoria, rende il linguaggio meno efficiente di alternative come C++, ma lo rende molto più facile da usare.
+\\
+Per poter consentire la portabilità degli eseguibili, Java è stato pensato come linguaggio compilato e interpretato, con una build in due stadi:
+\begin{itemize}
+    \item La fase di compilazione\footnote{
+     il processo di compilazione traduce una serie di istruzioni scritte in un determinato linguaggio di programmazione (codice sorgente) in istruzioni di un altro linguaggio (codice oggetto)\cite{CompilazioneWiki}
+    } del codice Java produce un file intermedio chiamato \emph{bytecode} che è un file intermedio contenente codice simil-macchina.
+    \item Durante la fase di interpretazione la macchina virtuale interpreta\footnote{
+    il processo di interpretazione esegue le istruzioni nel linguaggio usato traducendole di volta in volta in istruzioni in linguaggio macchina del processore\cite{InterpretazioneWiki}
+    } il bytecode e lo converte in codice macchina.
+\end{itemize}
+\'E proprio la presenza del secondo step, quello di interpretazione, che consente di eseguire il codice Java su qualunque piattaforma possegga la virtual machine.
+\\
+Il linguaggio è stato creato nel 1995 da James Gosling, della Sun Microsystems, azienda che è stata successivamente acquisita dalla Oracle Corporation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{HTML}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px, height=100px]{./images/HTML.png}
+    \caption{Il logo di HTML}
+    \label{fig:HTML}
+\end{figure}
+HTML è un linguaggio di markup ideato nel 1993 dal World Wide Web Consortium, consente di strutturare lo scheletro delle pagine web. Oggi è utilizzato principalmente per il disaccoppiamento della struttura logica di una pagina web e la sua rappresentazione, gestita tramite gli stili CSS per adattarsi alle nuove esigenze di comunicazione e pubblicazione all'interno di Internet \cite{HTMLDef}.
+\\
+In realtà, oggi, i siti statici basati su HTML e CSS stanno venendo rimpiazzati da siti responsive e dinamici basati su moderni framework di programmazione come React e Angular, che sono basati su JS\footnote{
+In realtà questi framework sfruttano ancora entrambi i linguaggi solo che il loro uso viene astratto dal contesto e sostanzialmente "si fa uso di HTML e CSS in JavaScript"
+}.
+\\
+Proprio per il motivo sopra citato, ho utilizzato HTML molto poco, poichè tutto poteva essere costruito in JavaScript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{CSS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/CSS.png}
+    \caption{Il logo di CSS}
+    \label{fig:CSS}
+\end{figure}
+CSS è un linguaggio di stile che è stato creato nel 1996 e le cui regole erano contenute in un documento di specifica prodotto dal World Wide Web Consortium \cite{CSSDef}.
+\\
+CSS è stato inventato per poter aggiungere uno styling alle pagine HTML, sebbene possa sembrare un mero orpello estetico, la sua esistenza ha anche motivazioni pratiche: consente di adattare la visualizzazione dei contenuti al mezzo di interfacciamento utilizzato dall'utente.
+\\
+Non ho fatto molto uso del linguaggio CSS perchè spesso ho utilizzato le macro offerte da Bootstrap\footnote{
+Bootstrap è una libreria che consente di integrare il codice Javascript con macro Sass per personalizzare l'interfaccia. Il codice Sass è una versione matura di CSS, definito dagli stessi sviluppatori "CSS with superpowers"\cite{SassDef}
+}
+e dove queste non potevano arrivare ho impiegato la libreria di Styled Components\footnote{
+Con Styled Components si impiegano i tagged template literals (recentemente aggiunti allo standard JS) grazie ai quali è possibile scrivere codice CSS direttamente all'interno delle componenti in modo da cambiarne lo stile.\cite{StyledComponentsDef}
+} per ReactJS.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mysql}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/MySQL.png}
+    \caption{Il logo di MySQL}
+    \label{fig:MySQL}
+\end{figure}
+Mysql è un sistema di gestione dei database relazionali che è stato sviluppato nel 1994 dalla Oracle Corporation e consente l'integrazione con numerosi linguaggi di programmazione.
+\\
+Io l'ho integrato con il backend scritto in Java, basato su Spring, sfruttando le librerie di JPA \footnote{Java Persistence Api, sistema che gestisce l'interazione tra un programma Java e un DBMS per database relazionali} e Hibernate \footnote{un sistema che gestisce il mapping degli oggetti di un programma su un database relazionale}.
+\\
+Ho scelto di utilizzare il Mysql come DBMS per il fatto che lo avevo già visto per motivi didattici nel corso universitario di Database.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Framework}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ReactJS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/React.png}
+    \caption{Il logo di React}
+    \label{fig:React}
+\end{figure}
+Il Framework per la gestione del frontend di mia scelta è stato ReactJS, libreria basata sulla creazione dei cosiddetti componenti (frammenti dell'interfaccia utente) che devono essere il più possibile riusabili, in modo che l'interfaccia possa essere composta limitando il numero di elementi specifici presenti nel progetto. Secondo la definizione data dalla documentazione stessa un componente è un'unità debolmente accoppiata che incorpora sia la logica che la visualizzazione\cite{JSXDocs}. Pertanto le componenti vengono divise sulla base delle responsabilità associate ad ognuna.
+\\
+React è un framework Open Source inizialmente creato da Jordan Walke, un ingegnere software di Facebook, che lo ha chiamato inizialmente "FaxJS". È stato influenzato da XHP, una libreria di componenti HTML per PHP . È stato utilizzato inizialmente sul News Feed di Facebook nel 2011 e successivamente su Instagram nel 2012. È stato rilasciato al pubblico al JSConf US del maggio 2013.\cite{ReactHistory} Il progetto è ad oggi mantenuto sia dalla community che dal gruppo Meta.
+\\
+Il framework si basa su un linguaggio chiamato JSX, che è un'estensione della libreria JS che consente la definizione di elementi di interfaccia utente, l'engine di React si occupa poi successivamente di trasformare le componenti in chiamate a funzione JS\cite{JSXDocs}. Con la versione 16.8 sono stati aggiunti al Framework gli hook, che sono un modo diverso di approcciare lo sviluppo.
+\\
+In origine si impiegavano le classi e tutti i concetti ad esse legati (ereditarietà, polimorfismo, etc...) e per decretare i cicli di render si impiegava lo stato di vita del componente. Gli stadi nel ciclo di vita erano i seguenti:
+\begin{itemize}
+    \item Il componente viene creato
+    \item Il componente viene modificato o ne vengono modificati dei parametri
+    \item Il componente viene smontato
+\end{itemize}
+Nonostante sia ancora possibile sfruttare il framework, impiegando le classi come componenti, e gli stadi nel ciclo di vita al posto degli Hooks, queste pratiche sono state rapidamente abbandonate e si punta verso un aggiornamento di tutte quelle applicazioni che ancora non fanno uso del nuovo standard.
+\\
+Gli hooks sono sostanzialmente il nuovo modo di procedere\cite{ReactHooks}, ce ne sono di vari tipi, che adempiono a svariati compiti, quelli che mi sono trovato ad utilizzare principalmente sono i seguenti:
+\begin{itemize}
+    \item useState: Definisce uno stato locale che non può essere modificato se non impiegando il suo setter personale.
+    \item useEffect: Definisce una funzione che viene eseguita ogniqualvolta gli elementi presenti all'interno della sua dependency list vengono modificati.
+    \item useRef: Definisce un reference che consente di andare a ripescare gli attributi di un qualsiasi tag JSX impiegando un nome simbolico.
+\end{itemize}
+\'E inoltre possibile andare a costruire degli hook \emph{ad hoc} che svolgono mansioni specifiche.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spring}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/spring_logo.png}
+    \caption{Il logo di Spring}
+    \label{fig:Spring}
+\end{figure}
+Per la gestione del backend dell'applicazione ho impiegato il framework di Spring, creato nel 2002, la prima versione venne scritta da Rod Johnson e distribuita con la pubblicazione del proprio libro "Expert One-on-One Java EE Design and Development"\cite{SpringHistory}.
+\\
+Spring è divenuto il framework di riferimento per quel che riguarda l'ambito backend per le applicazioni web e ciò è dovuto principalmente alla grande libreria di dipendenze\footnote{Le dipendenze non sono altro che librerie esterne liberamente accessibili} che consentono di gestire le applicazioni web basate su Java con molta più semplicità.
+\\
+La semplicità di Spring deriva dal meccanismo di \emph{dependency injection}, che consente di "iniettare" le dipendenze all'interno degli oggetti che ne necessitano. Questo meccanismo consente di realizzare applicativi con basso accoppiamento e passa la responsabilità di orchestrare le varie componenti al container.\cite{DependencyInjection}
+\\
+Sono parte del framework una serie di librerie standard atte a rendere la realizzazione di applicazioni più semplici, dato che la maggior parte delle funzioni di livello più basso sono già implementate al loro interno. Per il progetto ho utilizzato i seguenti tre moduli principali:
+\begin{itemize}
+    \item Spring Data - che consente la gestione trasparente di repository, l'object mapping sui database e la gestione delle annotazioni di Maven. \cite{SpringData}
+    \item Spring Cloud - che consente di scambiare messaggi tra i servizi in un sistema distribuito. \cite{SpringCloud}
+    \item Spring Security - che fornisce un layer di protezione configurabile per le applicazioni web. \cite{SpringSecurity}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spring Boot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Spring Boot è un'estensione di spring che punta a rendere la gestione delle applicazioni ancora più semplice. Infatti Spring è gestito sostanzialmente in automatico dal framework. L'obiettivo di spring boot è quello di alzare il livello di astrazione, nascondendo i dettagli di gestione delle servlet, e altro, dietro alle annotazioni.
+\\
+Oltre a queste caratteristiche Spring Boot arriva già con Tomcat a bordo, questo consente di eseguire l'applicazione con estrema semplicità (un pulsante su IntelliJ).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Librerie}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Redux}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/redux_logo.jpg}
+    \caption{Il logo di Redux}
+    \label{fig:Redux}
+\end{figure}
+Redux è una libreria creata per gestire lo stato di un'applicazione rendendolo globale, Redux è stato ideato nel 2015 da Dan Abramov e Andrew Clar, che si sono ispirati alla Flux Architecture di React ideata da Facebook. \cite{ReduxHistory}
+\\
+Su Redux sono state costruite delle librerie che consentono di rendere persistenti le informazioni immagazzinate nello stato globale, sfruttando il local storage messo a disposizione dal browser. In questo modo le informazioni non vengono perse in fase di reload della pagina.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Versioning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Git}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/Git.png}
+    \caption{Il logo di Git}
+    \label{fig:Git}
+\end{figure}
+Git è un sistema di versioning del codice creato nel 2005 da Linus Torvald per la condivisione delle informazioni tra i vari ingegneri che contribuirono allo sviluppo del primo kernel Linux.\cite{GitHistory} \'E presto divenuto uno strumento standard dell'industria del software. 
+\\
+I software basati su Git consentono la condivisione di progetti tra più persone, in modo che tutti possano scaricare la versione più aggiornata del codice dalla repository, e modificare la propria copia locale. I cambiamenti possono essere successivamente caricati sulla repository, a patto che non vi siano collisioni tra le modifiche fatte dai vari autori (che non possono essere risolte in modo automatico dal tool, perchè non è in grado di capire quale sia la modifica da tenere) il sistema è in grado di rendere disponibile automaticamente il codice aggiornato.
+\\
+Ad oggi esistono parecchie piattaforme commerciali ed enterprise costruite su Git (come GitHub e GitLab), per lo sviluppo dell'applicazione è stato fornito a me e al mio collega una repository GitLab aziendale.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Programmi e ambienti di sviluppo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Docker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/docker_logo.png}
+    \caption{Il logo di Docker}
+    \label{fig:Docker}
+\end{figure}
+Docker è un applicativo creato da Solomon Hykes, inizialmente ingegnere alla la DotCloud, è stato rilasciato nel 2013 come progetto Open Source.\cite{DockerHistory} Il software consente l'automatizzazione del deployment di un'applicazione distribuita tramite l'utilizzo di container.
+\\
+Docker è uno strumento flessibile che consente di costruire un'applicazione da zero in maniera completamente automatica, a patto che sia stato settato correttamente. L'obiettivo, utilizzando questo tool, era quello di andare a comporre il sistema utilizzando un unico comando da terminale cercando di tenere la dimensione dei container il più possibile contenuta.
+\\
+Per poter raggiungere questo obiettivo ho dovuto sfruttare le potenzialità principali del tool, in particolare:
+\begin{itemize}
+    \item La possibilità di scaricare delle immagini offerte da altri utenti o compagnie, liberamente accessibili su Docker Hub.
+    \item La possibilità di andare a modificare come più si preferisce tali immagini tramite l'utilizzo di un Dockerfile.
+    \item La composizione dei servizi tramite un docker-compose, che decreta quale sia l'ordine di esecuzione dei vari servizi che compaiono e quali siano i loro attributi (porta esposta, nome del container, healthcheck e dipendenze, etc...).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Postman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/postman.png}
+    \caption{Il logo di Postman}
+    \label{fig:Postman}
+\end{figure}
+Postman è un software nato come \emph{side project} di Abhinav Asthana, che aveva intenzione di semplificare il processo di sviluppo del software (in particolare del testing delle API), ha lanciato l'applicazione come applicazione su Chrome web store e successivamente ha creato l'applicativo locale vedendo quanta attenzione aveva ricevuto il software.\cite{PostmanWiki}
+\\
+Postman si è rivelato estremamente utile per fare il debugging del backend quando le chiamate del frontend non funzionavano.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{IntelliJ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=100px]{./images/intellij.png}
+    \caption{Il logo di Intellij}
+    \label{fig:Intellij}
+\end{figure}
+La prima versione di IntelliJ IDEA fu pubblicata da JetBrains nel gennaio 2001 e fu il primo IDE ad integrare funzionalità come la navigazione del codice e il code refactoring.\cite{IntellijWiki}
+\\
+Oggi IntelliJ è uno degli IDE\footnote{Ambienti di sviluppo} più potenti e versatili attualmente in circolazione (anche perchè di molto superiore a software concorrenti come Eclipse Enterprise Edition), lo ho impiegato sostanzialmente per sviluppare in Java perchè il suo sistema di correzione di warning ed errori è di gran lunga superiore a quello offerto da Visual Studio.
+\\
+Inoltre il suo sistema predittivo è perfettamente integrato con l'ambiente di sviluppo Java, rendendo molto più veloce la stesura del codice.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Visual Studio}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Visual Studio Code è un editor che è stato messo in commercio da Microsoft nel 2015.
+\\
+Ho impiegato Visual Studio Code per gestire l'ambito frontend, il software è eccezionalmente fornito in termini di plugin, che consentono di migliorare il sistema predittivo del software e le sue capacità di gestione di file JavaScript, CSS e HTML.
